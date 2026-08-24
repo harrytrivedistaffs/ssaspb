@@ -1,0 +1,25 @@
+.menu--main .menu-item {
+  margin-inline-start: 0;
+}
+
+.menu--main a {
+  font-weight: 600;
+  @apply transition-colors duration-150;
+}
+
+.menu--main a:hover,
+.menu--main a.is-active {
+  color: var(--color-accent-2);
+}
+
+@media screen and (min-width: 48rem) {
+  .menu--main > .menu-item a {
+    color: var(--header-link-color);
+  }
+  .menu--main > .menu-item--active-trail a,
+  .menu--main > .menu-item a:focus,
+  .menu--main > .menu-item a:hover {
+    color: var(--color-accent-2);
+    background-color: transparent;
+  }
+}

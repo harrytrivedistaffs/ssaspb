@@ -1,0 +1,94 @@
+.media-with-text {
+  border: 0;
+  background-color: transparent;
+  padding-block: 4rem;
+}
+
+.media-with-text--default .media-with-text__media {
+  margin: 0;
+}
+
+.media-with-text .media-with-text__body {
+  padding-inline: var(--grid-column-spacing);
+}
+
+.media-with-text--media-left .media-with-text__body,
+.media-with-text--media-right .media-with-text__body {
+  margin-block: auto;
+}
+
+.media-with-text__inner {
+  max-width: 100%;
+  margin-inline: auto;
+  padding-inline: 2.5rem;
+}
+
+.media-with-text--media-left .media-with-text__inner,
+.media-with-text--media-right .media-with-text__inner {
+  align-items: center;
+  gap: 2.5rem;
+}
+.media-with-text--media-left .media-with-text__media,
+.media-with-text--media-right .media-with-text__media {
+  flex: 1 1 40%;
+  max-width: 32rem;
+  min-width: 0;
+}
+.media-with-text--media-left .media-with-text__body,
+.media-with-text--media-right .media-with-text__body {
+  flex: 1 1 60%;
+  min-width: 0;
+}
+
+.media-with-text__media {
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border-bottom: 5px solid #4b2e83;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.12);
+}
+.media-with-text__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.media-with-text__body h2 {
+  color: #37205f;
+}
+
+.media-with-text__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  background-color: var(--color-accent);
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.media-with-text__link:hover {
+  background-color: var(--color-accent-2);
+  color: white;
+}
+
+.media-with-text--featured {
+  color: white;
+  background-color: var(--color-accent);
+}
+
+.media-with-text--featured :where(h2, h3, h4, h5, h6),
+.media-with-text--featured :where(.h2, .h3, .h4, .h5, .h6) {
+  color: white;
+}
+
+.media-with-text--featured .media-with-text__link {
+  color: var(--color-accent);
+  background-color: white;
+}

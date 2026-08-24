@@ -1,0 +1,85 @@
+body {
+  --color-accent: theme('colors.purple');
+  --color-accent-2: theme('colors.purple-dark');
+  --color-link: theme('colors.purple');
+  --color-focus: theme('colors.purple');
+
+  --font-primary: theme('fontFamily.primary');
+  --font-secondary: var(--font-primary);
+  --font-heading-1: var(--font-secondary);
+  --font-heading-2: var(--font-secondary);
+  --font-heading-3: var(--font-secondary);
+  --font-heading-4: var(--font-secondary);
+  --font-heading-5: var(--font-secondary);
+  --font-heading-6: var(--font-secondary);
+
+  --width-container: 80rem;
+  --grid-column-spacing: var(--spacing-larger);
+
+  --breadcrumbs-background-color: theme('colors.purple-light');
+  --breadcrumbs-link-color: theme('colors.purple');
+
+  --button-bg-color: theme('colors.purple');
+  --button-bg-color-hover: theme('colors.purple-dark');
+  --button-border-color: theme('colors.purple');
+  --button-text-color: theme('colors.purple');
+  --button-text-color-hover: white;
+  --button-link-bg-color: theme('colors.purple');
+  --button-link-bg-color-hover: theme('colors.purple-dark');
+  --button-link-color: white;
+  --button-link-color-hover: white;
+  --button-border-radius: 999px;
+
+  --color-section-header-bg: white;
+  --header-link-color: theme('colors.purple');
+  --header-logo-width: 15rem;
+  --color-slogan: theme('colors.purple');
+  --header-services-button-color: theme('colors.purple');
+  --header-services-button-border-color: theme('colors.purple');
+  --header-services-button-bg-color-hover: theme('colors.purple-light');
+  --header-search-button-bg-color: theme('colors.purple');
+  --header-search-button-bg-color-hover: theme('colors.purple-dark');
+  --header-search-button-color-hover: white;
+
+  --secondary-menu-bg-color-first: white;
+  --secondary-menu-bg-color-second: theme('colors.purple-light');
+  --secondary-menu-link-color: theme('colors.purple');
+  --secondary-menu-link-color-focus: theme('colors.purple-dark');
+
+  --banner-content-bg-color: theme('colors.purple');
+  --banner-content-text-color: white;
+  --color-banner-title-link: white;
+  --color-banner-title-link-hover: white;
+
+  --color-section-footer-bg: theme('colors.purple');
+  --color-footer-heading: white;
+  --color-footer-link: white;
+  --color-footer-text: white;
+  --color-section-pre-footer-bg: theme('colors.purple');
+  --color-pre-footer-heading: white;
+  --color-pre-footer-link: white;
+  --color-pre-footer-text: white;
+  --color-section-post-footer-bg: theme('colors.purple-dark');
+  --color-post-footer-heading: white;
+  --color-post-footer-link: white;
+  --color-post-footer-text: white;
+  --color-section-housekeeping-bg: theme('colors.purple-dark');
+  --color-housekeeping-heading: white;
+  --color-housekeeping-link: white;
+  --color-housekeeping-text: white;
+
+  --alert-banner-bg-color-minor: theme('colors.purple');
+  --alert-banner-color-minor: white;
+  --alert-banner-minor-color: white;
+  --alert-banner-minor-border-color: white;
+
+  --color-page-section-background-color-1: theme('colors.purple');
+  --color-page-section-background-color-1-text-color: white;
+  --color-page-section-background-color-1-link-color: white;
+  --color-page-section-background-color-2: theme('colors.grey');
+  --color-page-section-background-color-2-text-color: theme('colors.purple-dark');
+  --color-page-section-background-color-2-link-color: theme('colors.purple');
+  --color-page-section-background-color-3: theme('colors.purple-light');
+  --color-page-section-background-color-3-text-color: theme('colors.purple-dark');
+  --color-page-section-background-color-3-link-color: theme('colors.purple');
+}

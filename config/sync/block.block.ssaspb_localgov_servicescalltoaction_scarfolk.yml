@@ -1,0 +1,22 @@
+uuid: 2f18c06d-7d09-4d17-9beb-a64a4d3bff7b
+langcode: en
+status: true
+dependencies:
+  module:
+    - localgov_services
+  theme:
+    - ssaspb
+_core:
+  default_config_hash: cGQX48mjw70XY9gxwrTgcrYtPnq2iAIPiqUVk5t5Otg
+id: ssaspb_localgov_servicescalltoaction_scarfolk
+theme: ssaspb
+region: content_top
+weight: 1
+provider: null
+plugin: localgov_service_cta_block
+settings:
+  id: localgov_service_cta_block
+  label: 'Services call to action'
+  label_display: '0'
+  provider: localgov_services
+visibility: {  }

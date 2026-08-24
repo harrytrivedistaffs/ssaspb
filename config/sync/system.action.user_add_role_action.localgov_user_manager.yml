@@ -1,0 +1,14 @@
+uuid: 3b2d0d3c-40bb-4b60-93d5-e54aad0a9645
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.localgov_user_manager
+  module:
+    - user
+id: user_add_role_action.localgov_user_manager
+label: 'Add the User manager role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: localgov_user_manager

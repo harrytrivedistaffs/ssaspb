@@ -1,0 +1,14 @@
+uuid: e095a725-7c4c-4b37-84b2-fca12a9da345
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: '-WRJU5SdlE-zJg7aQTLL6oXpSJgTnrfGWCPbTnX_Xhk'
+label: Freestyle
+id: freestyle
+description: 'User defined crop, with no aspect ratio set.'
+aspect_ratio: ''
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null

@@ -1,0 +1,8 @@
+uuid: 5eceb225-9aea-4dd6-bce6-52d7a2d7165e
+langcode: en
+status: true
+dependencies: {  }
+id: ssaspb_footer_resources
+label: 'SSASPB footer: Resources'
+description: ''
+locked: false

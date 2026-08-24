@@ -1,0 +1,135 @@
+<?php
+
+function ssaspb_views_pre_render($view) {
+  if ($view->id() === 'localgov_events_listing') {
+    $view->element['#attached']['library'][] = 'ssaspb/events';
+  }
+  if ($view->id() === 'ssaspb_partner_carousel') {
+    $view->element['#attached']['library'][] = 'ssaspb/carousel';
+  }
+}
+
+function ssaspb_preprocess_node(&$variables) {
+  if ($variables['node']->bundle() === 'localgov_publication_page' || $variables['node']->bundle() === 'localgov_publication_cover_page') {
+    $variables['#attached']['library'][] = 'ssaspb/blog';
+  }
+}
+
+function ssaspb_form_search_block_form_alter(array &$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  $form['keys']['#attributes']['placeholder'] = t('Search this site...');
+}
+
+function ssaspb_preprocess_page(&$variables) {
+  if (!empty($variables['page']['banner'])) {
+    $variables['has_banner'] = TRUE;
+  }
+  if (!empty($variables['page']['footer_second'])) {
+    $logo_url = theme_get_setting('logo.url');
+    if ($logo_url) {
+      $site_name = \Drupal::config('system.site')->get('name');
+      $contact_url = \Drupal\Core\Url::fromUserInput('/contact')->toString();
+      $social = [
+        ['label' => 'X (Twitter)', 'icon' => 'fa-twitter', 'url' => 'https://x.com/'],
+        ['label' => 'LinkedIn', 'icon' => 'fa-linkedin-in', 'url' => 'https://www.linkedin.com/'],
+        ['label' => 'YouTube', 'icon' => 'fa-youtube', 'url' => 'https://www.youtube.com/'],
+      ];
+      $social_markup = '';
+      foreach ($social as $item) {
+        $social_markup .= '<a href="' . $item['url'] . '" aria-label="' . $item['label'] . '" target="_blank" rel="noopener"><i class="fab ' . $item['icon'] . '"></i></a>';
+      }
+      $contact_details = '';
+      $contact_block = \Drupal\block_content\Entity\BlockContent::load(2);
+      if ($contact_block && $contact_block->hasField('body')) {
+        $contact_details = '<div class="ssaspb-footer__contact-details">' . $contact_block->get('body')->value . '</div>';
+      }
+      $brand = [
+        '#markup' => '<div class="ssaspb-footer__brand">'
+          . '<img class="ssaspb-footer__logo" src="' . $logo_url . '" alt="' . $site_name . '" />'
+          . '<div class="ssaspb-footer__get-in-touch">'
+          . '<span class="ssaspb-footer__get-in-touch-icon"><i class="fas fa-envelope"></i></span>'
+          . '<h2>Get in touch</h2>'
+          . '<p>If you have a question or would like more information, we are here to help.</p>'
+          . '<a class="ssaspb-footer__contact-link" href="' . $contact_url . '"><span>Contact us</span><i class="fas fa-arrow-right"></i></a>'
+          . '</div>'
+          . $contact_details
+          . '<div class="ssaspb-footer__social">' . $social_markup . '</div>'
+          . '</div>',
+      ];
+      $variables['page']['footer_first'] = ['ssaspb_footer_brand' => $brand] + ($variables['page']['footer_first'] ?? []);
+      $variables['has_footer_first'] = TRUE;
+    }
+  }
+}
+
+function ssaspb_preprocess_field(&$variables) {
+  if ($variables['field_name'] !== 'localgov_subsites_content') {
+    return;
+  }
+  $resource_delta = 0;
+  foreach ($variables['items'] as $delta => &$item) {
+    $paragraph = $variables['element'][$delta]['#paragraph'] ?? NULL;
+    if ($paragraph && $paragraph->bundle() === 'localgov_ia_block') {
+      $resource_delta++;
+      $item['attributes']->addClass('ssaspb-resource-item');
+      $item['attributes']->addClass('ssaspb-resource-item--' . $resource_delta);
+    }
+  }
+}
+
+function ssaspb_preprocess_paragraph__localgov_block_view(&$variables) {
+  $paragraph = $variables['paragraph'];
+  if ($paragraph->get('localgov_embed_block_view')->isEmpty()) {
+    return;
+  }
+  $ref = $paragraph->get('localgov_embed_block_view')->first()->getValue();
+  $view = \Drupal\views\Views::getView($ref['target_id']);
+  if (!$view || empty($ref['display_id'])) {
+    return;
+  }
+  $view->setDisplay($ref['display_id']);
+  $title = $view->getTitle();
+  if (!empty($title)) {
+    $variables['block_view_title'] = $title;
+  }
+  if ($ref['target_id'] === 'ssaspb_news_grid') {
+    $variables['block_view_more_url'] = '/news';
+    $variables['block_view_more_text'] = t('View all news');
+    $variables['attributes']['class'][] = 'ssaspb-section--news';
+  }
+}
+
+function ssaspb_preprocess_views_view(&$variables) {
+  if ($variables['view']->id() === 'ssaspb_partner_carousel') {
+    $variables['attributes']['class'][] = 'ssaspb-carousel';
+  }
+  if ($variables['view']->id() === 'ssaspb_news_grid') {
+    $variables['attributes']['class'][] = 'ssaspb-card-grid';
+  }
+}
+
+function ssaspb_preprocess_views_view_unformatted(&$variables) {
+  if ($variables['view']->id() !== 'ssaspb_news_grid') {
+    return;
+  }
+  foreach ($variables['rows'] as &$row) {
+    $row['attributes']->addClass('ssaspb-card');
+  }
+}
+
+function ssaspb_preprocess_views_view_fields(&$variables) {
+  if ($variables['view']->id() !== 'ssaspb_partner_carousel') {
+    return;
+  }
+  $entity = $variables['row']->_entity;
+  if (!$entity->hasField('field_ssaspb_logo_link') || $entity->get('field_ssaspb_logo_link')->isEmpty()) {
+    return;
+  }
+  $link = $entity->get('field_ssaspb_logo_link')->first();
+  $image_markup = $variables['fields']['field_ssaspb_logo_image']->content;
+  $variables['fields']['field_ssaspb_logo_image']->content = [
+    '#type' => 'link',
+    '#title' => $image_markup,
+    '#url' => \Drupal\Core\Url::fromUri($link->uri),
+    '#options' => ['attributes' => ['target' => '_blank', 'rel' => 'noopener']],
+  ];
+}

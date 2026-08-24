@@ -1,0 +1,8 @@
+.fact-box {
+  border-block-start: var(--border-large-accent);
+  background-color: var(--color-grey-lightest);
+}
+
+.fact-box__figure {
+  color: var(--color-accent);
+}

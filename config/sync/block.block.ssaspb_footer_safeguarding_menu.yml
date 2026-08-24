@@ -1,0 +1,25 @@
+uuid: 38285cb9-b2be-49be-b873-170b3292796c
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.ssaspb_footer_safeguarding
+  module:
+    - system
+  theme:
+    - ssaspb
+id: ssaspb_footer_safeguarding_menu
+theme: ssaspb
+region: footer_third
+weight: 0
+provider: null
+plugin: 'system_menu_block:ssaspb_footer_safeguarding'
+settings:
+  id: 'system_menu_block:ssaspb_footer_safeguarding'
+  label: Safeguarding
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility: {  }

@@ -1,0 +1,9 @@
+.lgd-header__nav--secondary a {
+  color: var(--secondary-menu-link-color);
+  @apply transition-colors duration-150;
+}
+
+.lgd-header__nav--secondary a:hover,
+.lgd-header__nav--secondary a:focus {
+  color: var(--secondary-menu-link-color-focus);
+}

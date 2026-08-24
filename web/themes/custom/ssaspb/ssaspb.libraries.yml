@@ -1,0 +1,223 @@
+global:
+  css:
+    theme:
+      css/base/fonts.css: {}
+      css/base/variables.css: {}
+      css/base/global.css: {}
+      css/layout/layout-utilities.css: {}
+      css/base/overrides.css: {}
+
+alert-banner:
+  css:
+    theme:
+      css/components/alert-banner.css: {}
+
+header:
+  css:
+    theme:
+      css/components/header.css: {}
+
+banner:
+  css:
+    theme:
+      css/components/banner.css: {}
+
+ia-block:
+  css:
+    theme:
+      css/components/ia-block.css: {}
+
+box-links:
+  css:
+    theme:
+      css/components/box-links.css: {}
+
+media-with-text:
+  css:
+    theme:
+      css/components/media-with-text.css: {}
+
+newsroom-teaser:
+  css:
+    theme:
+      css/components/newsroom-teaser.css: {}
+
+breadcrumbs:
+  css:
+    theme:
+      css/components/breadcrumbs.css: {}
+
+guide-nav:
+  css:
+    theme:
+      css/components/guide-nav.css: {}
+
+link-and-summary:
+  css:
+    theme:
+      css/components/link-and-summary.css: {}
+
+prev-next:
+  css:
+    theme:
+      css/components/prev-next.css: {}
+
+service-landing-page:
+  css:
+    theme:
+      css/components/service-landing-page.css: {}
+
+service-statuses:
+  css:
+    theme:
+      css/components/service-statuses.css: {}
+
+service-cta-block:
+  css:
+    theme:
+      css/components/service-cta-block.css: {}
+
+page-title-block:
+  css:
+    theme:
+      css/components/page-title-block.css: {}
+
+teaser:
+  css:
+    theme:
+      css/components/teaser.css: {}
+
+image-with-caption:
+  css:
+    theme:
+      css/components/image-with-caption.css: {}
+
+events:
+  css:
+    theme:
+      css/components/events.css: {}
+
+news:
+  css:
+    theme:
+      css/components/news.css: {}
+
+sidebar:
+  css:
+    theme:
+      css/components/sidebar.css: {}
+
+step-by-step:
+  css:
+    theme:
+      css/components/step-by-step.css: {}
+
+featured-teasers:
+  css:
+    theme:
+      css/components/featured-teasers.css: {}
+
+key-contacts:
+  css:
+    theme:
+      css/components/key-contacts.css: {}
+
+card:
+  css:
+    theme:
+      css/components/card.css: {}
+
+callout-box:
+  css:
+    theme:
+      css/components/callout-box.css: {}
+
+fact-box:
+  css:
+    theme:
+      css/components/fact-box.css: {}
+
+quote:
+  css:
+    theme:
+      css/components/quote.css: {}
+
+contact:
+  css:
+    theme:
+      css/components/contact.css: {}
+
+accordion:
+  css:
+    theme:
+      css/components/accordion.css: {}
+
+tabs:
+  css:
+    theme:
+      css/components/tabs.css: {}
+
+directories:
+  css:
+    theme:
+      css/components/directories.css: {}
+
+featured-subsite:
+  css:
+    theme:
+      css/components/featured-subsite.css: {}
+
+topic-list-builder:
+  css:
+    theme:
+      css/components/topic-list-builder.css: {}
+
+blog:
+  css:
+    theme:
+      css/components/blog.css: {}
+
+video:
+  css:
+    theme:
+      css/components/video.css: {}
+
+facets:
+  css:
+    theme:
+      css/components/facets.css: {}
+
+sitewide-search:
+  css:
+    theme:
+      css/components/sitewide-search.css: {}
+
+subsites-menu:
+  css:
+    theme:
+      css/components/subsites-menu.css: {}
+
+secondary-menu:
+  css:
+    theme:
+      css/components/secondary-menu.css: {}
+
+menu-main:
+  css:
+    theme:
+      css/components/menu-main.css: {}
+
+footer:
+  css:
+    theme:
+      css/components/footer.css: {}
+
+back-to-top:
+  css:
+    theme:
+      css/components/back-to-top.css: {}
+
+carousel:
+  css:
+    theme:
+      css/components/carousel.css: {}

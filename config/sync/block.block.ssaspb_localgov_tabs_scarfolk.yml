@@ -1,0 +1,22 @@
+uuid: 0d2af022-5407-4ffb-90e0-9ff81ce1a118
+langcode: en
+status: true
+dependencies:
+  theme:
+    - ssaspb
+_core:
+  default_config_hash: 18k4pNekX8og7ZyuFH_4h0qPH5lm4OKpF5OXvHB2JGc
+id: ssaspb_localgov_tabs_scarfolk
+theme: ssaspb
+region: tabs
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

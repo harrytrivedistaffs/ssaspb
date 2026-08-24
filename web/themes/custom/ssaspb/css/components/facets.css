@@ -1,0 +1,4 @@
+.facets-widget-links .is-active a {
+  color: var(--color-accent);
+  font-weight: 700;
+}

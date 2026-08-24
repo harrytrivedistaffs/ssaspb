@@ -1,0 +1,22 @@
+uuid: d0b4ef15-c3cd-40af-b5f0-f783dd9cc1c7
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - paragraphs
+_core:
+  default_config_hash: yP-mjfwPZzYI_AK_BJICtzFLhjcJ7rWGyJzYituBviU
+id: paragraph.localgov_background_image
+field_name: localgov_background_image
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

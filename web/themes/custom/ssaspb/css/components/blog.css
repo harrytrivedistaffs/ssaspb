@@ -1,0 +1,8 @@
+.blog-post__meta {
+  color: var(--color-grey-dark);
+  border-block-start: var(--border);
+}
+
+.blog-channel__author a {
+  color: var(--color-accent);
+}

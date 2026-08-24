@@ -1,0 +1,13 @@
+uuid: d76a79b2-3d9c-41e2-9b39-289e766895f6
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: 6TN7TO22lrA_lUHUUubDM_9Lxl-r78gkJ_NTndS0GRQ
+id: media.localgov_featured
+label: Featured
+description: null
+targetEntityType: media
+cache: true

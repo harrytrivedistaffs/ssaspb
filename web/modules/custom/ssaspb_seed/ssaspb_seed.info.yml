@@ -1,0 +1,9 @@
+name: 'SSASPB Seed Content'
+type: module
+description: 'Creates placeholder homepage content and partner logos on install.'
+package: 'SSASPB'
+core_version_requirement: ^11
+dependencies:
+  - localgov_subsites:localgov_subsites
+  - localgov_paragraphs:localgov_paragraphs
+  - localgov_news:localgov_news

@@ -1,0 +1,22 @@
+uuid: 0353c92c-2b82-4da0-ac12-2b7ef0de9486
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - paragraphs_library
+_core:
+  default_config_hash: _jeCc_5TkokZ-aLkjyWTBJ-XMYIWAXvEGvECxYOqe3g
+id: node.localgov_page_components
+field_name: localgov_page_components
+entity_type: node
+type: entity_reference
+settings:
+  target_type: paragraphs_library_item
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

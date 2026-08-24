@@ -1,0 +1,19 @@
+.box-link {
+  padding-inline: var(--grid-column-spacing);
+  text-align: center;
+  border: var(--border);
+  background-color: var(--color-grey-lightest);
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.box-link:has(:focus-within, a:hover) {
+  color: white;
+  background-color: var(--color-accent);
+}
+
+.box-link:has(a:hover) a {
+  color: white;
+  background-color: var(--color-accent);
+}

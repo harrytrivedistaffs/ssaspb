@@ -1,0 +1,22 @@
+uuid: e2e0d0a2-6213-4962-8c7f-ea404f66c875
+langcode: en
+status: true
+dependencies:
+  module:
+    - localgov_services_page
+  theme:
+    - ssaspb
+_core:
+  default_config_hash: PVdTznuKPvuCBQyC2dbF8BYAHgpc0PTD0kSIpbSzyrc
+id: ssaspb_localgov_servicepagerelatedtopics_scarfolk
+theme: ssaspb
+region: sidebar_second
+weight: 1
+provider: null
+plugin: localgov_services_related_topics_block
+settings:
+  id: localgov_services_related_topics_block
+  label: 'Service page related topics'
+  label_display: '0'
+  provider: localgov_services_page
+visibility: {  }

@@ -1,0 +1,10 @@
+.localgov-contact {
+  padding: var(--grid-column-spacing);
+  border: var(--border);
+  border-block-start: var(--border-large-accent);
+  background-color: var(--color-grey-lightest);
+}
+
+.localgov-contact a {
+  color: var(--color-accent);
+}

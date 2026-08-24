@@ -1,0 +1,8 @@
+uuid: 9c5ff1f6-80dc-44e9-8098-11ca48dc30df
+langcode: en
+status: true
+dependencies: {  }
+id: ssaspb_footer_safeguarding
+label: 'SSASPB footer: Safeguarding'
+description: ''
+locked: false

@@ -1,0 +1,34 @@
+{#
+/**
+ * @file
+ * SSASPB theme override for the block view paragraph.
+ *
+ * @see template_preprocess_paragraph()
+ * @ingroup themeable
+ */
+#}
+
+{%
+  set classes = [
+    'ssaspb-section',
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+
+<div{{ attributes.addClass(classes) }}>
+  {% if block_view_title %}
+    <div class="ssaspb-section__header">
+      <h2>{{ block_view_title }}</h2>
+      {% if block_view_more_url %}
+        <a class="ssaspb-section__view-all" href="{{ block_view_more_url }}">
+          <span>{{ block_view_more_text }}</span>
+          <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
+      {% endif %}
+    </div>
+  {% endif %}
+  {{ content }}
+</div>

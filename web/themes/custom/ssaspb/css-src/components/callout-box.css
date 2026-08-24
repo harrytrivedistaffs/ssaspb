@@ -1,0 +1,13 @@
+.call-out-box--no-image {
+  background-color: var(--color-accent);
+}
+
+.call-out-box__content {
+  color: white;
+  background: var(--color-accent);
+}
+
+.call-out-box__link {
+  color: var(--color-accent);
+  background-color: white;
+}

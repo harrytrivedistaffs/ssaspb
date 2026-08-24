@@ -1,0 +1,34 @@
+uuid: 145eae70-0207-46f3-9e65-916e31ab0324
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.ssaspb_logo.field_ssaspb_logo_image
+    - field.field.node.ssaspb_logo.field_ssaspb_logo_link
+    - node.type.ssaspb_logo
+  module:
+    - image
+    - user
+id: node.ssaspb_logo.default
+targetEntityType: node
+bundle: ssaspb_logo
+mode: default
+content:
+  field_ssaspb_logo_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_ssaspb_logo_link: true

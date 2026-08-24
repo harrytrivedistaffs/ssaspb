@@ -1,0 +1,22 @@
+uuid: 5130be7b-c960-4b05-a559-d2f252b19b8e
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ssaspb
+_core:
+  default_config_hash: HMT0p1pe6D6hsYTqyWbzK2nquVWT6anaDXoNu7WYvPI
+id: ssaspb_localgov_breadcrumbs_scarfolk
+theme: ssaspb
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

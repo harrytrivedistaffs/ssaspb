@@ -1,0 +1,22 @@
+uuid: e89726fb-2ec6-4545-984f-795447ed002b
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ssaspb
+_core:
+  default_config_hash: XqdhRTIfjgkSTBL-WtfsStngpA1B7I9_ajAh3cVOk5s
+id: ssaspb_localgov_messages_scarfolk
+theme: ssaspb
+region: messages
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: Messages
+  label_display: '0'
+  provider: system
+visibility: {  }

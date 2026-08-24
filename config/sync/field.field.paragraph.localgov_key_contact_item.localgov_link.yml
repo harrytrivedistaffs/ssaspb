@@ -1,0 +1,25 @@
+uuid: a4a7d9ec-c5e5-4957-965e-8dd2fd6e45cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.localgov_link
+    - paragraphs.paragraphs_type.localgov_key_contact_item
+  module:
+    - link
+_core:
+  default_config_hash: p-2Yi0lOUKfeizQZP2LRsM1dK0evwTma-e8OkUU4210
+id: paragraph.localgov_key_contact_item.localgov_link
+field_name: localgov_link
+entity_type: paragraph
+bundle: localgov_key_contact_item
+label: Website
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

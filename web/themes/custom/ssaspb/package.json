@@ -1,0 +1,16 @@
+{
+  "name": "ssaspb",
+  "private": true,
+  "description": "Build tooling for the ssaspb theme's CSS. Runs on a developer's machine only — cPanel has no Node.js, so the compiled output under css/ is committed to git like any other theme asset. Run `npm run build` after editing anything in css-src/.",
+  "scripts": {
+    "build": "postcss \"css-src/**/*.css\" --base css-src --dir css --ext css",
+    "watch": "postcss \"css-src/**/*.css\" --base css-src --dir css --ext css --watch"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "postcss-cli": "^11.0.0",
+    "postcss-import": "^16.1.0",
+    "tailwindcss": "^3.4.13"
+  }
+}

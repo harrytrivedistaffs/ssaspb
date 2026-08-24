@@ -1,0 +1,9 @@
+.featured-subsite {
+  padding: var(--grid-column-spacing);
+  background-color: var(--color-accent);
+  color: white;
+}
+
+.featured-subsite a {
+  color: white;
+}

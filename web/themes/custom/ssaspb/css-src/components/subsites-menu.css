@@ -1,0 +1,8 @@
+.lgd-subsites-menu {
+  border-inline-start: var(--border-large-accent);
+}
+
+.lgd-subsites-menu__link.is-active,
+.lgd-subsites-menu__link:hover {
+  color: var(--color-accent);
+}

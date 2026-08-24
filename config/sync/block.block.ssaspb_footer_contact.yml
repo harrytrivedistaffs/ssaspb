@@ -1,0 +1,23 @@
+uuid: 6de92241-911e-4deb-b9df-12667437af23
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:ba288312-50e4-4de2-b19a-4bdd753a52e3'
+  module:
+    - block_content
+  theme:
+    - ssaspb
+id: ssaspb_footer_contact
+theme: ssaspb
+region: footer
+weight: 0
+provider: null
+plugin: 'block_content:ba288312-50e4-4de2-b19a-4bdd753a52e3'
+settings:
+  id: 'block_content:ba288312-50e4-4de2-b19a-4bdd753a52e3'
+  label: Contact
+  label_display: '1'
+  provider: block_content
+  view_mode: full
+visibility: {  }

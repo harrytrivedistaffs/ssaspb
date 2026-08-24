@@ -1,0 +1,22 @@
+uuid: c52931b3-ae81-4b38-a4eb-397f8235d87a
+langcode: en
+status: true
+dependencies:
+  module:
+    - localgov_core
+  theme:
+    - ssaspb
+_core:
+  default_config_hash: f0iKCYeeRkvUMJ87FM2sOkHWRyk74xQsanz5TniJSG8
+id: ssaspb_localgov_page_header_block_scarfolk
+theme: ssaspb
+region: content_top
+weight: -10
+provider: null
+plugin: localgov_page_header_block
+settings:
+  id: localgov_page_header_block
+  label: 'Page header block'
+  label_display: '0'
+  provider: localgov_core
+visibility: {  }

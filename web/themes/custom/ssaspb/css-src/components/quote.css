@@ -1,0 +1,8 @@
+.lgd-quote {
+  border-inline-start: var(--border-large-accent);
+  padding-inline-start: var(--grid-column-spacing);
+}
+
+.lgd-quote__citation {
+  color: var(--color-accent);
+}

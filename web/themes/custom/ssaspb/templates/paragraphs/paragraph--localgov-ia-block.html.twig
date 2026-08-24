@@ -1,0 +1,42 @@
+{#
+/**
+ * @file
+ * SSASPB theme override for the IA block paragraph.
+ *
+ * @see template_preprocess_paragraph()
+ * @ingroup themeable
+ */
+#}
+
+{%
+  set classes = [
+    'ia-block',
+    'ssaspb-resource-card',
+    promoted ? 'ia-block--promoted',
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+
+{% if not localgov_base_remove_css %}
+  {{ attach_library('localgov_base/ia-block') }}
+{% endif %}
+
+{% if paragraph.localgov_ia_block_title.value %}
+  <div{{ attributes.addClass(classes) }}>
+    <a class="ssaspb-resource-card__link" href="{{ field_link }}">
+      <span class="ssaspb-resource-card__icon" aria-hidden="true"></span>
+      <span class="ssaspb-resource-card__label">
+        {{ paragraph.localgov_ia_block_title.value }}
+        <span class="ssaspb-resource-card__arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10" /><path d="M10 8l4 4-4 4" /></svg>
+        </span>
+      </span>
+    </a>
+    {% if list['#links'] %}
+      {{ list }}
+    {% endif %}
+  </div>
+{% endif %}

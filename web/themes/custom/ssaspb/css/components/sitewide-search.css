@@ -1,0 +1,14 @@
+.lgd-sitewide-search__result h3 a {
+  color: var(--color-accent);
+}
+
+.lgd-sitewide-search__form input.form-submit {
+  background-color: var(--color-accent);
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.lgd-sitewide-search__form input.form-submit:hover {
+  background-color: var(--color-accent-2);
+}

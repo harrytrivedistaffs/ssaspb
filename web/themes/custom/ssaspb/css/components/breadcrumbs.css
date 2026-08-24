@@ -1,0 +1,7 @@
+.region-breadcrumb:not(:has(.breadcrumbs__item:nth-child(2))) {
+  display: none;
+}
+
+.breadcrumbs__item {
+  color: var(--breadcrumbs-link-color);
+}

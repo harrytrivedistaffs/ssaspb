@@ -1,0 +1,14 @@
+uuid: 8d96e072-9e94-443c-9fcc-59e584c5a28a
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: sNQ61xvGh-uhoAiVqKW6Oig9JVywoMwWZF1hrE_cpDQ
+label: '3:2'
+id: '3_2'
+description: ''
+aspect_ratio: '3:2'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null

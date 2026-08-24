@@ -1,0 +1,8 @@
+.lgd-tabs__list {
+  border-block-end: var(--border);
+}
+
+.lgd-tabs__tab.is-active {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}

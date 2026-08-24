@@ -1,0 +1,32 @@
+uuid: ad0db1af-47b2-4198-b224-f9caae9335a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.services
+  module:
+    - system
+    - views
+  theme:
+    - ssaspb
+_core:
+  default_config_hash: dIZQveClXGuKNNnnZIszG9I_DBPhQp4eMCPkbYqVkOg
+id: ssaspb_views_block__services_block_service_list_scarfolk
+theme: ssaspb
+region: content_top
+weight: 5
+provider: null
+plugin: 'views_block:services-block_service_list'
+settings:
+  id: 'views_block:services-block_service_list'
+  label: 'Services list block'
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: null
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: '<front>'

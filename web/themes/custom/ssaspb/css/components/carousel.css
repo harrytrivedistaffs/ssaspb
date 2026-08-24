@@ -1,0 +1,146 @@
+.ssaspb-carousel {
+  position: relative;
+  padding-inline: 2.5rem;
+}
+.ssaspb-carousel .splide__track {
+  padding-block: 0.5rem;
+}
+.ssaspb-carousel .splide__slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ssaspb-carousel__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5rem;
+  width: 100%;
+}
+.ssaspb-carousel__logo img {
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+  filter: grayscale(0.6);
+  opacity: 0.9;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.ssaspb-carousel__logo:hover img {
+  filter: grayscale(0);
+  opacity: 1;
+}
+.ssaspb-carousel .splide__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border-radius: 999px;
+  border: 1px solid #4b2e83;
+  background: white;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.ssaspb-carousel .splide__arrow:hover,
+.ssaspb-carousel .splide__arrow:focus {
+  background: #4b2e83;
+  outline: none;
+}
+.ssaspb-carousel .splide__arrow svg {
+  fill: #4b2e83;
+  width: 0.9rem;
+  height: 0.9rem;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.ssaspb-carousel .splide__arrow--prev svg {
+  transform: rotate(180deg);
+}
+.ssaspb-carousel .splide__arrow:hover svg,
+.ssaspb-carousel .splide__arrow:focus svg {
+  fill: white;
+}
+.ssaspb-carousel .splide__arrow--prev {
+  left: 0;
+}
+.ssaspb-carousel .splide__arrow--next {
+  right: 0;
+}
+.ssaspb-carousel .splide__pagination {
+  position: static;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0;
+  margin-block-start: 1.5rem;
+  list-style: none;
+}
+.ssaspb-carousel .splide__pagination__page {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 999px;
+  background: #d1d5db;
+  opacity: 1;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.ssaspb-carousel .splide__pagination__page.is-active {
+  background: #4b2e83;
+  transform: none;
+}
+
+.ssaspb-carousel .splide__toggle {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border-radius: 999px;
+  border: 1px solid #4b2e83;
+  background: white;
+  color: #4b2e83;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.ssaspb-carousel .splide__toggle:hover,
+.ssaspb-carousel .splide__toggle:focus {
+  background: #4b2e83;
+  color: white;
+  outline: none;
+}
+.ssaspb-carousel .splide__toggle::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 0.75rem;
+  color: inherit;
+  content: "\f04c";
+}
+.ssaspb-carousel .splide__toggle:not(.is-active)::before {
+  content: "\f04b";
+}

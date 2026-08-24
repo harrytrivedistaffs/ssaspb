@@ -1,0 +1,27 @@
+.menu--main .menu-item {
+  margin-inline-start: 0;
+}
+
+.menu--main a {
+  font-weight: 600;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.menu--main a:hover,
+.menu--main a.is-active {
+  color: var(--color-accent-2);
+}
+
+@media screen and (min-width: 48rem) {
+  .menu--main > .menu-item a {
+    color: var(--header-link-color);
+  }
+  .menu--main > .menu-item--active-trail a,
+  .menu--main > .menu-item a:focus,
+  .menu--main > .menu-item a:hover {
+    color: var(--color-accent-2);
+    background-color: transparent;
+  }
+}

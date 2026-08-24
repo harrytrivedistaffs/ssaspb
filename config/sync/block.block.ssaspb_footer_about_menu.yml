@@ -1,0 +1,25 @@
+uuid: b2bb0662-8118-4cb6-afa3-7c344a81daa2
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - system
+  theme:
+    - ssaspb
+id: ssaspb_footer_about_menu
+theme: ssaspb
+region: footer_second
+weight: 0
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: 'About us'
+  label_display: '1'
+  provider: system
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility: {  }

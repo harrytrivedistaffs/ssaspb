@@ -1,0 +1,11 @@
+uuid: c8c22121-8aed-4747-9fc0-2548711bf070
+langcode: en
+status: true
+dependencies: {  }
+name: 'Partner logo'
+type: ssaspb_logo
+description: 'A partner or member organisation logo shown in the homepage carousel.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

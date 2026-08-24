@@ -1,0 +1,11 @@
+.lgd-footer {
+  background-color: var(--color-section-footer-bg);
+}
+
+.lgd-footer a {
+  @apply transition-colors duration-150;
+}
+
+.lgd-footer a:hover {
+  text-decoration: underline;
+}

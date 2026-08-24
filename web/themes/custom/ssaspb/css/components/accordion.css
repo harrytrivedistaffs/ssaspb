@@ -1,0 +1,11 @@
+.accordion__title {
+  color: var(--color-accent);
+  border-block-start: var(--border-large-accent);
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.accordion__title:hover {
+  color: var(--color-accent-2);
+}

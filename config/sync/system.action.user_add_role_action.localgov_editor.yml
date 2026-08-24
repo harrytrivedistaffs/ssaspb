@@ -1,0 +1,14 @@
+uuid: 7c33823b-feb0-44fb-a5a4-8905cd0c5f00
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.localgov_editor
+  module:
+    - user
+id: user_add_role_action.localgov_editor
+label: 'Add the Editor role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: localgov_editor

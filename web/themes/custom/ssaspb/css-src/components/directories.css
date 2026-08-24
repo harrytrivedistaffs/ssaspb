@@ -1,0 +1,4 @@
+.lgd-directories-listing .lgd-teaser {
+  border-block-start: var(--border-large-accent);
+  background-color: var(--color-grey-lightest);
+}

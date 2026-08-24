@@ -1,0 +1,11 @@
+.lgd-header__nav--secondary a {
+  color: var(--secondary-menu-link-color);
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.lgd-header__nav--secondary a:hover,
+.lgd-header__nav--secondary a:focus {
+  color: var(--secondary-menu-link-color-focus);
+}

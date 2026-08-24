@@ -1,0 +1,25 @@
+uuid: 677af2db-3b63-4541-a7a8-1a5fcfbe9a34
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.ssaspb_footer_resources
+  module:
+    - system
+  theme:
+    - ssaspb
+id: ssaspb_footer_resources_menu
+theme: ssaspb
+region: footer_third
+weight: 1
+provider: null
+plugin: 'system_menu_block:ssaspb_footer_resources'
+settings:
+  id: 'system_menu_block:ssaspb_footer_resources'
+  label: Resources
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility: {  }

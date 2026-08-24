@@ -1,0 +1,7 @@
+.lgd-region__inner--sidebar-first > *,
+.lgd-region__inner--sidebar-second > *,
+.service-landing-page__service,
+.lgd-topic-list-builder__service,
+table {
+  border-block-start: var(--border-large-accent);
+}

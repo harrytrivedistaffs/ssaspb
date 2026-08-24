@@ -1,0 +1,18 @@
+uuid: cc56cb04-653e-4600-a4f8-1c4a4c7f39bb
+langcode: en
+status: true
+dependencies:
+  theme:
+    - ssaspb
+id: ssaspb_header_search
+theme: ssaspb
+region: search
+weight: 0
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  label_display: '0'
+  provider: search
+visibility: {  }

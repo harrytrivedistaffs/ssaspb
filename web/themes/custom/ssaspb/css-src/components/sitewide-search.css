@@ -1,0 +1,12 @@
+.lgd-sitewide-search__result h3 a {
+  color: var(--color-accent);
+}
+
+.lgd-sitewide-search__form input.form-submit {
+  background-color: var(--color-accent);
+  @apply transition-colors duration-150;
+}
+
+.lgd-sitewide-search__form input.form-submit:hover {
+  background-color: var(--color-accent-2);
+}

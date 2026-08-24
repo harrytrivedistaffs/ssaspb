@@ -1,0 +1,9 @@
+.accordion__title {
+  color: var(--color-accent);
+  border-block-start: var(--border-large-accent);
+  @apply transition-colors duration-150;
+}
+
+.accordion__title:hover {
+  color: var(--color-accent-2);
+}

@@ -1,0 +1,27 @@
+uuid: 5d3999b0-42cc-4f1d-922a-a3ba0edfb0f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.localgov-services-menu
+  module:
+    - system
+  theme:
+    - ssaspb
+_core:
+  default_config_hash: yE1HeAGuMmeEtZmcu6dUiAPDoGX0MytmqaHTJ_2kQ-A
+id: ssaspb_localgov_servicesmenu_scarfolk
+theme: ssaspb
+region: secondary_menu
+weight: -6
+provider: null
+plugin: 'system_menu_block:localgov-services-menu'
+settings:
+  id: 'system_menu_block:localgov-services-menu'
+  label: 'Services menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

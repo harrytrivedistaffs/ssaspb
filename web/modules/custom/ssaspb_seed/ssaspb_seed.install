@@ -1,0 +1,177 @@
+<?php
+
+use Drupal\Core\File\FileSystemInterface;
+use Drupal\file\Entity\File;
+use Drupal\media\Entity\Media;
+use Drupal\node\Entity\Node;
+use Drupal\paragraphs\Entity\Paragraph;
+
+function ssaspb_seed_install(): void {
+  $hero_media = ssaspb_seed_create_image_media('hero-placeholder.png', 'Homepage hero placeholder', 'Replace this placeholder image');
+  $band1_media = ssaspb_seed_create_image_media('band-placeholder-1.png', 'Image 1', 'Replace this placeholder image');
+  $band2_media = ssaspb_seed_create_image_media('band-placeholder-2.png', 'Image 2', 'Replace this placeholder image');
+
+  $banner = Paragraph::create([
+    'type' => 'localgov_banner_primary',
+    'localgov_title' => 'Working together to keep adults safe from abuse',
+    'localgov_subsites_banner_text' => 'We work in partnership across Staffordshire and Stoke-on-Trent to prevent abuse and support adults at risk.',
+    'localgov_url' => '/about-the-partnership',
+    'localgov_image' => $hero_media ? ['target_id' => $hero_media->id()] : [],
+  ]);
+  $banner->save();
+
+  $band_1 = Paragraph::create([
+    'type' => 'localgov_media_with_text',
+    'localgov_title' => "Safeguarding is everyone's responsibility",
+    'localgov_text' => ['value' => '<p>Summary 1. If you think an adult is experiencing abuse or neglect, do not ignore it. We all have a part to play in keeping adults safe and supported.</p>', 'format' => 'wysiwyg'],
+    'localgov_media_item' => $band1_media ? ['target_id' => $band1_media->id()] : [],
+    'localgov_media_position' => 'left',
+    'localgov_link' => ['uri' => 'internal:/report-a-concern', 'title' => 'Report a concern'],
+  ]);
+  $band_1->save();
+
+  $carousel_block = Paragraph::create([
+    'type' => 'localgov_block_view',
+    'localgov_embed_block_view' => [
+      'target_id' => 'ssaspb_partner_carousel',
+      'display_id' => 'block_carousel',
+    ],
+  ]);
+  $carousel_block->save();
+
+  $band_2 = Paragraph::create([
+    'type' => 'localgov_media_with_text',
+    'localgov_title' => 'Supporting adults across Staffordshire and Stoke-on-Trent',
+    'localgov_text' => ['value' => '<p>Summary 2. We work with our partners and communities to prevent abuse, respond to concerns and improve outcomes for adults with care and support needs.</p>', 'format' => 'wysiwyg'],
+    'localgov_media_item' => $band2_media ? ['target_id' => $band2_media->id()] : [],
+    'localgov_media_position' => 'right',
+    'localgov_link' => ['uri' => 'internal:/about-the-partnership', 'title' => 'About the Partnership'],
+  ]);
+  $band_2->save();
+
+  $resource_labels = ['Safeguarding procedures', 'Training and events', 'Policies and guidance', 'Easy read information'];
+  $resource_blocks = [];
+  foreach ($resource_labels as $i => $label) {
+    $resource = Paragraph::create([
+      'type' => 'localgov_ia_block',
+      'localgov_ia_block_title' => $label,
+      'localgov_ia_block_link' => ['uri' => 'internal:/resources', 'title' => 'View'],
+    ]);
+    $resource->save();
+    $resource_blocks[] = $resource;
+  }
+
+  $cta = Paragraph::create([
+    'type' => 'localgov_call_out_box',
+    'localgov_header_text' => 'Get in touch',
+    'localgov_body_text' => ['value' => '<p>If you have a question or would like more information, we are here to help.</p>', 'format' => 'wysiwyg'],
+    'localgov_button' => ['uri' => 'internal:/contact', 'title' => 'Contact us'],
+  ]);
+  $cta->save();
+
+  $home = Node::create([
+    'type' => 'localgov_subsites_overview',
+    'title' => 'Overview 1',
+    'localgov_subsites_summary' => 'Summary 1. Replace this with a short summary of the partnership board.',
+    'localgov_subsites_banner' => [$banner],
+    'localgov_subsites_content' => array_merge([$band_1, $carousel_block, $band_2], $resource_blocks, [$cta]),
+    'status' => 1,
+  ]);
+  $home->save();
+
+  \Drupal::configFactory()->getEditable('system.site')
+    ->set('page.front', '/node/' . $home->id())
+    ->save();
+
+  ssaspb_seed_create_news_articles();
+  ssaspb_seed_create_partner_logos();
+}
+
+function ssaspb_seed_create_image_media(string $filename, string $media_name, string $alt): ?Media {
+  $source = \Drupal::root() . '/themes/custom/ssaspb/assets/images/' . $filename;
+  if (!file_exists($source)) {
+    return NULL;
+  }
+
+  $fs = \Drupal::service('file_system');
+  $dir = 'public://seed';
+  $fs->prepareDirectory($dir, FileSystemInterface::CREATE_DIRECTORY);
+  $destination = $dir . '/' . $filename;
+  $fs->copy($source, $destination, FileSystemInterface::EXISTS_REPLACE);
+
+  $file = File::create(['uri' => $destination]);
+  $file->setPermanent();
+  $file->save();
+
+  $media = Media::create([
+    'bundle' => 'image',
+    'name' => $media_name,
+    'field_media_image' => [
+      'target_id' => $file->id(),
+      'alt' => $alt,
+    ],
+  ]);
+  $media->save();
+
+  return $media;
+}
+
+function ssaspb_seed_create_image_file(string $filename): ?File {
+  $source = \Drupal::root() . '/themes/custom/ssaspb/assets/images/' . $filename;
+  if (!file_exists($source)) {
+    return NULL;
+  }
+
+  $fs = \Drupal::service('file_system');
+  $dir = 'public://seed';
+  $fs->prepareDirectory($dir, FileSystemInterface::CREATE_DIRECTORY);
+  $destination = $dir . '/' . $filename;
+  $fs->copy($source, $destination, FileSystemInterface::EXISTS_REPLACE);
+
+  $file = File::create(['uri' => $destination]);
+  $file->setPermanent();
+  $file->save();
+
+  return $file;
+}
+
+function ssaspb_seed_create_news_articles(): void {
+  $dates = ['2026-08-15', '2026-08-02', '2026-07-22'];
+  for ($i = 1; $i <= 3; $i++) {
+    $image = ssaspb_seed_create_image_media("news-placeholder-$i.png", "News image $i", 'Replace this placeholder image');
+    $node = Node::create([
+      'type' => 'localgov_news_article',
+      'title' => "News $i",
+      'body' => ['value' => "Summary $i. Replace this with a short summary of the news story.", 'format' => 'wysiwyg'],
+      'localgov_news_date' => $dates[$i - 1],
+      'field_media_image' => $image ? ['target_id' => $image->id()] : [],
+      'status' => 1,
+    ]);
+    $node->save();
+  }
+}
+
+function ssaspb_seed_create_partner_logos(): void {
+  $partners = [
+    'Staffordshire County Council' => 'partner-logo-1.png',
+    'City of Stoke-on-Trent' => 'partner-logo-2.png',
+    'NHS' => 'partner-logo-3.png',
+    'Police' => 'partner-logo-4.png',
+    'Healthwatch Staffordshire' => 'partner-logo-5.png',
+    'Staffordshire Fire and Rescue Service' => 'partner-logo-6.png',
+    'National Probation Service' => 'partner-logo-7.png',
+    'Care Quality Commission' => 'partner-logo-8.png',
+    'Trading Standards' => 'partner-logo-9.png',
+  ];
+  foreach ($partners as $name => $filename) {
+    $file = ssaspb_seed_create_image_file($filename);
+    $node = Node::create([
+      'type' => 'ssaspb_logo',
+      'title' => $name,
+      'field_ssaspb_logo_image' => $file ? ['target_id' => $file->id(), 'alt' => "$name logo"] : [],
+      'field_ssaspb_logo_link' => ['uri' => 'internal:/', 'title' => ''],
+      'status' => 1,
+    ]);
+    $node->save();
+  }
+}

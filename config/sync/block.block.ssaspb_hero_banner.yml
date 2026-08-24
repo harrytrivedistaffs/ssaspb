@@ -1,0 +1,29 @@
+uuid: 2a811f87-9410-472c-b7bd-84ea0ea6e74e
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:3aaa510c-b4ec-4dec-8cd1-b0ce5dc327fb'
+  module:
+    - block_content
+    - system
+  theme:
+    - ssaspb
+id: ssaspb_hero_banner
+theme: ssaspb
+region: banner
+weight: -10
+provider: null
+plugin: 'block_content:3aaa510c-b4ec-4dec-8cd1-b0ce5dc327fb'
+settings:
+  id: 'block_content:3aaa510c-b4ec-4dec-8cd1-b0ce5dc327fb'
+  label: Hero
+  label_display: '0'
+  provider: block_content
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: '<front>'

@@ -1,0 +1,11 @@
+.banner--primary .banner__content {
+  left: calc(var(--border-width-large) * -1);
+  margin-block-end: var(--grid-column-spacing);
+  border: var(--border-large);
+  border-color: white;
+  margin-inline: 0;
+}
+
+.banner--primary .banner__content h1 {
+  color: var(--banner-content-text-color);
+}

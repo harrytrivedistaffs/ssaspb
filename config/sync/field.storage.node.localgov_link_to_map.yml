@@ -1,0 +1,21 @@
+uuid: fbc0e488-d76f-4600-971c-2aa95d7876b5
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - node
+_core:
+  default_config_hash: kOdKMBGw86-O3-6KDJmZp938BEipb88yM5_EudByNnU
+id: node.localgov_link_to_map
+field_name: localgov_link_to_map
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

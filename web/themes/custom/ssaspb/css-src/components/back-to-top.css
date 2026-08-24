@@ -1,0 +1,10 @@
+.back-to-top {
+  background-color: var(--color-accent);
+  color: white;
+  border-radius: 999px;
+  @apply transition-colors duration-150;
+}
+
+.back-to-top:hover {
+  background-color: var(--color-accent-2);
+}

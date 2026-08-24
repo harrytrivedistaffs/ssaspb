@@ -1,0 +1,25 @@
+.service-cta-block__list {
+  margin-block: var(--grid-column-spacing);
+  border-block-end: 0;
+}
+
+.service-cta-block__link-title {
+  font-weight: 700;
+}
+
+.service-cta-block__list-item {
+  margin-block-end: var(--grid-column-spacing);
+}
+
+.service-cta-block__link {
+  border-radius: 999px;
+  background-color: var(--color-accent);
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.service-cta-block__link:hover {
+  background-color: var(--color-accent-2);
+  color: white;
+}
