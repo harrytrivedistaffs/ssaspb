@@ -1,0 +1,21 @@
+uuid: e2db0ed9-1b90-4214-a4ea-5ff760b819ac
+langcode: en
+status: true
+dependencies:
+  module:
+    - localgov_alert_banner
+  theme:
+    - ssaspb
+id: ssaspb_alert_banner
+theme: ssaspb
+region: banner
+weight: -100
+provider: null
+plugin: localgov_alert_banner_block
+settings:
+  id: localgov_alert_banner_block
+  label: 'Alert banner'
+  label_display: '0'
+  provider: localgov_alert_banner
+  include_types: {  }
+visibility: {  }

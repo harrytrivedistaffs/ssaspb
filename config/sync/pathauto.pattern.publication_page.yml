@@ -1,0 +1,28 @@
+uuid: fcb7c1b5-ec09-457e-8c27-c75b05e5970f
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.localgov_publication_page
+  module:
+    - node
+  enforced:
+    module:
+      - localgov_publications
+_core:
+  default_config_hash: _5XwffzUufDoK8938sM1YKf96gjUiLDaKSoNxFzEguQ
+id: publication_page
+label: 'Publication page'
+type: 'canonical_entities:node'
+pattern: '/[node:localgov-publication-path]/[node:title]'
+selection_criteria:
+  0c7a2cf6-df20-4fe3-9020-75fbbf4e559b:
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      localgov_publication_page: localgov_publication_page
+selection_logic: and
+weight: -5
+relationships: {  }

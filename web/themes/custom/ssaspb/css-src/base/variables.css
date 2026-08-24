@@ -22,7 +22,7 @@ body {
   --button-bg-color: theme('colors.purple');
   --button-bg-color-hover: theme('colors.purple-dark');
   --button-border-color: theme('colors.purple');
-  --button-text-color: theme('colors.purple');
+  --button-text-color: white;
   --button-text-color-hover: white;
   --button-link-bg-color: theme('colors.purple');
   --button-link-bg-color-hover: theme('colors.purple-dark');

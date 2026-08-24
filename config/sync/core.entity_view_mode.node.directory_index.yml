@@ -1,0 +1,13 @@
+uuid: a2089642-1a02-46cd-9cec-b9515543acf3
+langcode: en
+status: false
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: JjGLeSBcEFJlRSSlReJ_0h1mPAu7IRJB8zjTydlt6sQ
+id: node.directory_index
+label: 'Directory search index'
+description: null
+targetEntityType: node
+cache: true

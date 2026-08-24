@@ -1,0 +1,9 @@
+uuid: 219fe472-bb3a-46fe-9a76-564d1cfee2a6
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: g97Ys0BNUy8sSYozrHT8CPhPBbgL2tQyKHovygCcWNY
+id: area
+label: Area
+label_token: ''

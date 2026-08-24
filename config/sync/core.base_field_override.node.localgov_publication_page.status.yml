@@ -1,0 +1,24 @@
+uuid: 8e404aa8-6e23-4fb9-9b42-f2dd686b66cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.localgov_publication_page
+_core:
+  default_config_hash: LGtWCQsM35eAfIx8MSBb0E8T1XAwhvm0LukUarrgL9w
+id: node.localgov_publication_page.status
+field_name: status
+entity_type: node
+bundle: localgov_publication_page
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
