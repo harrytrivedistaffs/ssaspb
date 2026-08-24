@@ -57,11 +57,12 @@ node_modules/
 # Ignore .env files as they are personal
 /.env
 
-# Ignore DB dumps
+# Ignore DB dumps, except the deliberate deploy snapshot in Deploy-Artifacts
 *.sql
 *.sql.gz
 *.mysql
 *.mysql.gz
+!/Deploy-Artifacts/*.sql.gz
 
 # Ignore temp files
 /.phpunit.result.cache
