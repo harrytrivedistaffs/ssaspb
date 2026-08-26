@@ -1,38 +1,47 @@
 
-[digitalscc@31 ssaspb]$ php -d memory_limit=512m vendor/bin/drush updatedb --yes
+ // Import the listed configuration changes?: yes.
 
-# Support bash to support `source` with fallback on $0 if this does not run with bash
-# https://stackoverflow.com/a/35006505/6512
-selfArg="$BASH_SOURCE"
-if [ -z "$selfArg" ]; then
-    selfArg="$0"
-fi
+>  [warning] Drush command terminated abnormally.
 
-self=$(realpath "$selfArg" 2> /dev/null)
-if [ -z "$self" ]; then
-    self="$selfArg"
-fi
+In SiteProcess.php line 214:
 
-dir=$(cd "${self%[/\\]*}" > /dev/null; cd '../drush/drush' && pwd)
+  The command "/home/digitalscc/public_html/ssaspb/vendor/bin/drush config:import --yes --uri=default" failed.
 
-if [ -d /proc/cygdrive ]; then
-    case $(which php) in
-        $(readlink -n /proc/cygdrive)/*)
-            # We are in Cygwin using Windows php, so the path must be translated
-            dir=$(cygpath -m "$dir");
-            ;;
-    esac
-fi
+  Exit Code: 1(General error)
 
-export COMPOSER_RUNTIME_BIN_DIR="$(cd "${self%[/\\]*}" > /dev/null; pwd)"
+  Working directory:
 
-# If bash is sourcing this file, we have to source the target as well
-bashSource="$BASH_SOURCE"
-if [ -n "$bashSource" ]; then
-    if [ "$bashSource" != "$0" ]; then
-        source "${dir}/drush" "$@"
-        return
-    fi
-fi
+  Output:
+  ================
+  +------------+---------------------------------------------------------------------------------------------+-----------+
+  | Collection | Config                                                                                      | Operation |
+  +------------+---------------------------------------------------------------------------------------------+-----------+
+  |            | core.extension                                                                              | Update    |
+  |            | filter.format.full_html                                                                     | Update    |
+  |            | gin.settings                                                                                | Update    |
+  |            | field.storage.node.localgov_subsites_theme                                                  | Update    |
+  |            | search_api.index.localgov_directories_index_default                                         | Update    |
+  |            | system.theme                                                                                | Update    |
+  |            | search_api.index.localgov_events                                                            | Update    |
+  |            | core.entity_view_display.node.localgov_subsites_page.default                                | Update    |
+  |            | core.entity_view_display.node.localgov_subsites_overview.full                               | Update    |
+  |            | gin_login.settings                                                                          | Update    |
+  |            | shield.settings                                                                             | Delete    |
+  |            | block.block.ssaspb_hero_banner                                                              | Delete    |
+  |            | ssaspb.settings                                                                             | Delete    |
+  |            | slick.settings                                                                              | Delete    |
+  |            | slick.optionset.default                                                                     | Delete    |
+  |            | core.entity_view_mode.media.slick                                                           | Delete    |
+  |            | image.style.slick_media                                                                     | Delete    |
+  |            | search_api.server.localgov_openreferral                                                     | Delete    |
+  |            | localgov_openreferral.property_mapping.node.localgov_directories_org                        | Delete    |
+  |            | facets.facet_source.search_api__views_rest__localgov_directories_or_services__rest_export_1 | Delete    |
+  +------------+---------------------------------------------------------------------------------------------+-----------+
 
-exec "${dir}/drush" "$@"
+   // Import the listed configuration changes?: yes.
+
+
+
+  Error Output:
+  ================
+   [warning] Drush command terminated abnormally.
