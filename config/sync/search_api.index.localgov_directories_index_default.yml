@@ -13,7 +13,6 @@ dependencies:
   module:
     - geo_entity
     - localgov_directories
-    - localgov_openreferral
     - node
     - search_api_location
 _core:
@@ -152,7 +151,6 @@ processor_settings:
   localgov_directories_sort_field:
     weights:
       preprocess_index: -49
-  localgov_openreferral_taxonomy: {  }
   rendered_item: {  }
   stemmer:
     weights:

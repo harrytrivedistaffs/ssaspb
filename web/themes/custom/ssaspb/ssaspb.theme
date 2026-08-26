@@ -76,6 +76,41 @@ function ssaspb_preprocess_field(&$variables) {
   }
 }
 
+function ssaspb_preprocess_paragraph__localgov_banner_primary(&$variables) {
+  $paragraph = $variables['paragraph'];
+
+  $variables['hero_title'] = $paragraph->get('localgov_title')->value ?? NULL;
+  $variables['hero_text'] = $paragraph->get('localgov_subsites_banner_text')->value ?? NULL;
+
+  $variables['hero_image_url'] = NULL;
+  if (!$paragraph->get('localgov_image')->isEmpty()) {
+    $media = $paragraph->get('localgov_image')->entity;
+    if ($media && $media->hasField('field_media_image') && !$media->get('field_media_image')->isEmpty()) {
+      $file = $media->get('field_media_image')->entity;
+      if ($file) {
+        $variables['hero_image_url'] = \Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
+      }
+    }
+  }
+
+  $variables['hero_cta_url'] = NULL;
+  if (!$paragraph->get('localgov_url')->isEmpty()) {
+    $raw = trim($paragraph->get('localgov_url')->value);
+    try {
+      $variables['hero_cta_url'] = \Drupal\Core\Url::fromUserInput($raw)->toString();
+    }
+    catch (\Exception $e) {
+      $variables['hero_cta_url'] = $raw;
+    }
+  }
+
+  $variables['hero_theme'] = 'theme_a';
+  $node = $paragraph->getParentEntity();
+  if ($node && $node->hasField('localgov_subsites_theme') && !$node->get('localgov_subsites_theme')->isEmpty()) {
+    $variables['hero_theme'] = $node->get('localgov_subsites_theme')->value;
+  }
+}
+
 function ssaspb_preprocess_paragraph__localgov_block_view(&$variables) {
   $paragraph = $variables['paragraph'];
   if ($paragraph->get('localgov_embed_block_view')->isEmpty()) {

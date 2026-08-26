@@ -19,6 +19,15 @@ targetEntityType: node
 bundle: localgov_subsites_page
 mode: default
 content:
+  localgov_subsites_banner:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: -10
+    region: content
   localgov_subsites_content:
     type: layout_paragraphs
     label: hidden
@@ -30,7 +39,6 @@ content:
     region: content
 hidden:
   links: true
-  localgov_subsites_banner: true
   localgov_subsites_parent: true
   localgov_subsites_summary: true
   localgov_subsites_topic: true

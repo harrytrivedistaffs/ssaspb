@@ -1,9 +1,7 @@
 uuid: 39fbea4f-d1ef-4143-879a-91673c60a09d
 langcode: en
 status: true
-dependencies:
-  module:
-    - slick
+dependencies: {  }
 name: 'Full HTML'
 format: full_html
 weight: 2

@@ -1,0 +1,43 @@
+{#
+/**
+ * @file
+ * SSASPB theme override for the primary banner paragraph.
+ *
+ * @see template_preprocess_paragraph()
+ * @ingroup themeable
+ */
+#}
+
+{%
+  set classes = [
+    'ssaspb-hero',
+    hero_theme == 'theme_b' ? 'ssaspb-hero--theme-purple',
+    hero_image_url ? '' : 'ssaspb-hero--placeholder-bg',
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished',
+  ]
+%}
+
+<div{{ attributes.addClass(classes) }}{% if hero_image_url %} style="background-image:url('{{ hero_image_url }}')"{% endif %}>
+  <div class="ssaspb-hero__inner">
+    {% if hero_title %}<h1>{{ hero_title }}</h1>{% endif %}
+    {% if hero_text %}<p>{{ hero_text }}</p>{% endif %}
+    <form class="ssaspb-hero__search" action="/search/node" method="get">
+      <label class="visually-hidden" for="ssaspb-hero-search">{{ 'Search this site'|t }}</label>
+      <input id="ssaspb-hero-search" type="text" name="keys" placeholder="{{ 'Search this site...'|t }}">
+      <button type="submit" aria-label="{{ 'Search'|t }}"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
+    </form>
+    {% if hero_cta_url %}
+      <a class="ssaspb-hero__cta" href="{{ hero_cta_url }}">{{ 'Find out more'|t }} <i class="fas fa-arrow-right"></i></a>
+    {% endif %}
+  </div>
+</div>
+<div class="ssaspb-hero__ctas-wrap">
+  <div class="ssaspb-hero__ctas">
+    <a class="ssaspb-pill ssaspb-pill--solid" href="/i-am-worried-about-someone">{{ 'I am worried about someone'|t }} <span class="ssaspb-pill__icon"><i class="fas fa-arrow-right"></i></span></a>
+    <a class="ssaspb-pill ssaspb-pill--solid" href="/i-need-help">{{ 'I need help'|t }} <span class="ssaspb-pill__icon"><i class="fas fa-arrow-right"></i></span></a>
+    <a class="ssaspb-pill ssaspb-pill--solid" href="/information-for-professionals">{{ 'Information for professionals'|t }} <span class="ssaspb-pill__icon"><i class="fas fa-arrow-right"></i></span></a>
+  </div>
+</div>

@@ -10,7 +10,6 @@ dependencies:
     - field.storage.node.localgov_event_price
     - search_api.server.localgov_events
   module:
-    - localgov_openreferral
     - node
 _core:
   default_config_hash: Dl9TdWlJnB_AX1dsT_ct8nFkWCA7DLZ7aN4DrEnJZ24

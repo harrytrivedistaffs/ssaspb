@@ -44,6 +44,8 @@ h3 a:hover {
 }
 
 .ssaspb-hero__ctas-wrap {
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
   background: white;
 }
 .ssaspb-hero__ctas {
@@ -154,6 +156,8 @@ h3 a:hover {
 
 .ssaspb-hero {
   position: relative;
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
   min-height: 26rem;
   display: flex;
   align-items: center;
@@ -174,6 +178,28 @@ h3 a:hover {
   position: absolute;
   inset: 0;
   background: linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.45) 30%, transparent 70%);
+}
+.ssaspb-hero--theme-purple::after {
+  background: linear-gradient(90deg, rgba(43, 18, 74, 0.85) 0%, rgba(43, 18, 74, 0.55) 30%, transparent 70%);
+}
+.ssaspb-hero__cta {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: theme('spacing.3');
+  margin-block-start: theme('spacing.6');
+  padding: theme('spacing.3') theme('spacing.6');
+  border-radius: theme('borderRadius.full');
+  background: theme('colors.purple');
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  @apply transition-colors duration-150;
+}
+.ssaspb-hero__cta:hover {
+  background: theme('colors.purple-dark');
+  color: white;
 }
 .ssaspb-hero__placeholder-tag {
   position: absolute;

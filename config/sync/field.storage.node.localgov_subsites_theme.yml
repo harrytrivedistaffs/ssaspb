@@ -16,6 +16,9 @@ settings:
     -
       value: theme_a
       label: Default
+    -
+      value: theme_b
+      label: Purple
   allowed_values_function: ''
 module: options
 locked: false
