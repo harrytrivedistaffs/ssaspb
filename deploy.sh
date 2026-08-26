@@ -68,6 +68,7 @@ if [ -f Deploy-Artifacts/ssaspb-files.zip ] && [ ! -f web/sites/default/files/.s
 fi
 
 echo
+export COMPOSER_MEMORY_LIMIT=-1
 if command -v composer >/dev/null 2>&1; then
   echo "==> composer install"
   composer install --no-dev --optimize-autoloader
@@ -99,7 +100,13 @@ fi
 
 echo
 echo "==> drush deploy (config import + database updates + cache rebuild)"
-vendor/bin/drush deploy -y
+# A plain "vendor/bin/drush" re-execs itself through two more shell/PHP
+# wrapper layers before it ever reaches PHP, so a memory_limit set only on
+# the outer call never reaches the process that actually runs the update.
+# Calling the real entry point (vendor/bin/drush.php) directly, with an
+# explicit memory_limit, is what has actually gotten updatedb/config:import
+# past silent 255-exit crashes on this host before.
+"$PHP_BIN" -d memory_limit=512M vendor/bin/drush.php deploy -y
 
 echo
 echo "==> Done."
