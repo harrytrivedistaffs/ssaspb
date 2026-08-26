@@ -1,16 +1,11 @@
-otice] Database updates start.
->
-> In BootstrapHook.php line 40:
->
->   Bootstrap failed. Run your command with -vvv for more information.
->
->
+ [notice] Database updates start.
+>  [success] No pending updates.
 
 In SiteProcess.php line 214:
 
   The command "/home/digitalscc/public_html/ssaspb/vendor/bin/drush updatedb --yes --uri=default" failed.
 
-  Exit Code: 1(General error)
+  Exit Code: 255(Unknown error)
 
   Working directory:
 
@@ -20,7 +15,4 @@ In SiteProcess.php line 214:
 
   Error Output:
   ================
-
-  In BootstrapHook.php line 40:
-
-    Bootstrap failed. Run your command with -vvv for more information.
+   [success] No pending updates.
