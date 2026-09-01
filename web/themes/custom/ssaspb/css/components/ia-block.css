@@ -7,7 +7,7 @@
 }
 
 .field__items:has(> .field__item > .ia-block) {
-  display: flex;
+  /* display: flex; */
   flex-wrap: wrap;
   gap: var(--grid-column-spacing);
 }
