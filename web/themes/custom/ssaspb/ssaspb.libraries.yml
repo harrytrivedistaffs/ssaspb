@@ -26,6 +26,7 @@ ia-block:
   css:
     theme:
       css/components/ia-block.css: {}
+      css/layout/ia-block.css: {}
 
 box-links:
   css:

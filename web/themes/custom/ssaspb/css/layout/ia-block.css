@@ -1,0 +1,3 @@
+.field__items:has(> .field__item > .ia-block){
+    gap: var(--grid-column-spacing);
+}
